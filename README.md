@@ -134,8 +134,8 @@ scp -i aws-login.pem aws-login.pem ubuntu@<BASTION_PUBLIC_IP>:~
 # SSH into Bastion
 ssh -i aws-login.pem ubuntu@<BASTION_PUBLIC_IP>
 
-# From Bastion, SSH into private EC2
-ssh -i aws-login.pem ubuntu@<PRIVATE_EC2_IP>
+# From Bastion, SSH into private EC2 (the AMI was different)
+ssh -i aws-login.pem ec2-user@<PRIVATE_EC2_IP>
 
 # Deploy a simple Python HTTP server on port 8000
 echo "<h1>My First AWS Project</h1>" > index.html
@@ -159,22 +159,3 @@ I copied the ALB DNS name and opened it in the browser — the HTML page loaded 
 - Outbound traffic from private instances goes through **NAT Gateway** so their IPs are never exposed
 - SSH access is only possible through the **Bastion Host**, keeping access auditable and controlled
 - Security groups follow **least privilege** — only the ports each resource actually needs are open
-
----
-
-## 💡 What I Learned
-
-- How to design a VPC with public and private subnets across multiple Availability Zones
-- Why NAT Gateway is used instead of giving EC2 instances public IPs
-- How a Bastion Host works as a secure jump server
-- How Auto Scaling Groups manage EC2 instances across AZs
-- How to wire up an Application Load Balancer to a Target Group with health checks
-
----
-
-
-## 📚 References
-
-- [AWS VPC with Public and Private Subnets (NAT)](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html)
-- [AWS Application Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html)
-- [AWS Auto Scaling Groups](https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html)
