@@ -70,40 +70,6 @@ Implemented a production-grade AWS architecture that deploys applications secure
 
 ---
 
-## 📁 Folder Structure
-
-```
-aws-vpc-private-subnet-architecture/
-│
-├── README.md
-│
-├── architecture/
-│   └── architecture-diagram.png
-│
-├── vpc/
-│   └── vpc-setup-notes.md
-│
-├── compute/
-│   ├── launch-template-notes.md
-│   └── asg-notes.md
-│
-├── networking/
-│   ├── security-groups.md
-│   └── nat-gateway-notes.md
-│
-├── load-balancer/
-│   ├── alb-notes.md
-│   └── target-group-notes.md
-│
-├── bastion/
-│   └── bastion-access.md
-│
-└── app/
-    └── index.html
-```
-
----
-
 ## 🚀 How I Set This Up
 
 ### 1. Created the VPC
