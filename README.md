@@ -2,7 +2,6 @@
 
 Implemented a production-grade AWS architecture that deploys applications securely inside a private subnet.
 
----
 
 ## Architecture Overview
 
@@ -16,23 +15,20 @@ How traffic flows
 - **Outbound:** EC2 instances → NAT Gateway → Internet Gateway → Internet
 - **Admin SSH:** My machine → Bastion Host → EC2 instances (private subnet)
 
----
 
 ## What I Built
 
-| Component | What it does |
-|---|---|
-| **VPC** | Isolated network for all my resources |
-| **Public Subnets (x2)** | Where I placed the ALB and NAT Gateway, one per AZ |
-| **Private Subnets (x2)** | Where my application EC2 instances live, one per AZ |
-| **Internet Gateway** | Allows public internet traffic into the VPC |
-| **NAT Gateway** | Lets private instances reach the internet without exposing their IPs |
-| **Application Load Balancer** | Distributes incoming HTTP traffic across my EC2 instances |
-| **Auto Scaling Group** | Automatically manages and scales my EC2 instances |
-| **Bastion Host** | Jump server I used to SSH into private instances |
-| **Security Groups** | Firewall rules I configured per resource |
+1. **VPC** — Isolated network for all my resources
+2. **Public Subnets (x2)** — Where I placed the ALB and NAT Gateway, one per AZ
+3. **Private Subnets (x2)** — Where my application EC2 instances live, one per AZ
+4. **Internet Gateway** — Allows public internet traffic into the VPC
+5. **NAT Gateway** — Lets private instances reach the internet without exposing their IPs
+6. **Application Load Balancer** — Distributes incoming HTTP traffic across my EC2 instances
+7. **Auto Scaling Group** — Automatically manages and scales my EC2 instances
+8. **Bastion Host** — Jump server I used to SSH into private instances
+9. **Security Groups** — Firewall rules I configured per resource
 
----
+
 
 ## How I Set This Up
 
