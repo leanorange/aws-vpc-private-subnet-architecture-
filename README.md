@@ -42,7 +42,7 @@ ssh -i aws-login.pem ubuntu@<BASTION_PUBLIC_IP>
 # from bastion, SSH into private EC2 (the AMI was different)
 ssh -i aws-login.pem ec2-user@<PRIVATE_EC2_IP>
 # deploy a simple python HTTP server on port 8000
-echo "<h1>my first AWS project</h1>" > index.html
+echo "<h1>Hello From Private Instance</h1>" > index.html
 python3 -m http.server 8000
 ```
 ### 6. created the application load balancer
